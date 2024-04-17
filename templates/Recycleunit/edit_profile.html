@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+{%  extends 'Recycleunit/recycleindex.html' %}
+{% block body %}
+<body>
+ <div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+<form action="/myapp/Edit_Profile_post/#abc" method="post">
+    {% csrf_token %}
+    <table class="table table-hover">
+
+  <tr>
+      <input type="hidden" class="form-control" name="id" value="{{ data.id }}" required>
+    <td>Name</td>
+    <td><label for="textfield"></label>
+      <input type="text" class="form-control" name="textfield" id="textfield" value="{{ data.name }}" required/></td>
+  </tr>
+  <tr>
+    <td>E-Mail</td>
+    <td><label for="textfield2"></label>
+      <input type="text" class="form-control" name="textfield2" id="textfield2" value="{{ data.email }}" required/></td>
+  </tr>
+  <tr>
+    <td>Phone No</td>
+    <td><label for="textfield3"></label>
+      <input type="text" class="form-control" name="textfield3" id="textfield3" value="{{ data.phone_no }}" required/></td>
+  </tr>
+  <tr>
+    <td>Manager</td>
+    <td><label for="textfield4"></label>
+      <input type="text" class="form-control" name="textfield4" id="textfield4" value="{{ data.manager }}" required/></td>
+  </tr>
+  <tr>
+    <td>License No</td>
+    <td><label for="textfield5"></label>
+      <input type="text" class="form-control" name="textfield5" id="textfield5" value="{{ data.license_no }}" required/></td>
+  </tr>
+  <tr>
+    <td>Place</td>
+    <td><label for="textfield6"></label>
+      <input type="text" class="form-control" name="textfield6" id="textfield6" value="{{ data.place }}" required/></td>
+  </tr>
+  <tr>
+    <td>Street</td>
+    <td><label for="textfield7"></label>
+      <input type="text" class="form-control" name="textfield7" id="textfield7" value="{{ data.street }}" required /></td>
+  </tr>
+  <tr>
+    <td>City</td>
+    <td><label for="textfield8"></label>
+      <input type="text" class="form-control" name="textfield8" id="textfield8" value="{{ data.city }}" required/></td>
+  </tr>
+  <tr>
+    <td>Building No</td>
+    <td><label for="textfield9"></label>
+      <input type="text" class="form-control" name="textfield9" id="textfield9" value="{{ data.building_no }}" required/></td>
+  </tr>
+  <tr>
+    <td align="center" colspan="2"><input type="submit" name="button" id="button" class="btn btn-info" value="Update"></td>
+  </tr>
+</table>
+</form>
+                    </div>
+    </div>
+  </div>
+
+</body>
+{% endblock %}
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+{% extends 'admin/adminhomeindex.html' %}
+{% block body %}
+<body>
+ <div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <form action="/myapp/View_Alloc_post/#abc" method="post">
+{% csrf_token %}
+<table class="table table-hover">
+    <tr>
+      <td>
+      <input type="text" class="form-control" name="textfield" placeholder="Search by Worker" id="textfield" required /></td>
+      <td><input type="submit" name="button" id="button" class="btn btn-info" value="Go" /></td>
+    </tr>
+  </table><table class="table table-hover">
+  <tr>
+    <td>Sl.No</td>
+    <td>Area</td>
+    <td>Worker</td>
+    <td>&nbsp;</td>
+  </tr>
+    {% for i in data %}
+  <tr>
+    <td>{{ forloop.counter }}</td>
+    <td>{{ i.AREA.city }}<br>
+    {{ i.AREA.street }}<br>
+    {{ i.AREA.place }}</td>
+    <td>{{ i.WORKER.name }}</td>
+    <td><a href="/myapp/delete_Alloc/{{ i.id }}" onclick="return confirm('ARE YOU SURE?')" class="btn btn-danger">Delete</a></td>
+  </tr>{% endfor %}
+</table>
+
+</form>
+        </div>
+    </div>
+  </div>
+
+
+</body>
+{% endblock %}
+</html>
